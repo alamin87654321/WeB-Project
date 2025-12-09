@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Harvest - Online Grocery Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-shopping-basket"></i>
+                <h1>FRESH <span>HARVEST</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="products">Products</a></li>
+                    <li><a href="#" class="nav-link" data-page="cart">Add To Cart <span class="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count" class="cart-count">0</span></span></a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contacts</a></li>
+                    <li class="user-menu">
+                        <a href="#" class="nav-link" data-page="login" id="login-link">Login</a>
+                        <button class="logout-btn" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content container">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <h2 class="page-title">Welcome to Fresh Harvest</h2>
+            <div class="about-section">
+                <p>Fresh Harvest is your one-stop online grocery store offering the freshest fruits, vegetables, dairy products, and other essential grocery items delivered right to your doorstep. We source our products directly from farmers and trusted suppliers to ensure the highest quality for our customers.</p>
+                <p>Browse through our wide selection of products, add them to your cart, and enjoy a seamless shopping experience with secure checkout and fast delivery.</p>
+                <p>New customers can register for an account to start shopping. Existing customers can log in to view their order history and manage their account.</p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" id="start-shopping-btn">Start Shopping Now</button>
+                </div>
+            </div>
+            
+            <!-- Featured Products -->
+            <h3 style="margin: 40px 0 20px; text-align: center; color: rgb(55, 155, 55);">Featured Products</h3>
+            <div class="products-grid" id="featured-products">
+                <!-- Featured products will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="products" class="page">
+            <h2 class="page-title">Our Products</h2>
+            <div class="products-grid" id="all-products">
+                <!-- All products will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Cart Page -->
+        <section id="cart" class="page">
+            <h2 class="page-title">Your Shopping Cart</h2>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items will be added here by JavaScript -->
+                <p id="empty-cart-message" style="text-align: center; padding: 30px; color: rgb(190, 189, 189);">Your cart is empty. Start adding some products!</p>
+            </div>
+            <div class="cart-summary" id="cart-summary" style="display: none;">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">BDT 0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Charge:</span>
+                    <span id="delivery">BDT 60</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total:</span>
+                    <span id="total">BDT 60</span>
+                </div>
+                <button class="btn" id="checkout-btn" style="margin-top: 20px;">Proceed to Checkout</button>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <h2 class="page-title">About Fresh Harvest</h2>
+            <div class="about-section">
+                <h3>Our Story</h3>
+                <p>Fresh Harvest was founded in 2022 with a simple mission to make fresh, high-quality groceries accessible to everyone. We started as a small local delivery service and have grown into one of the leading online grocery platforms in Bangladesh.</p>
+                
+                <h3>Our Mission</h3>
+                <p>We are committed to providing our customers with the freshest products at competitive prices while supporting local farmers and producers. We believe in sustainable sourcing and reducing food waste through efficient supply chain management.</p>
+                
+                <h3>Why Choose Us?</h3>
+                <ul style="list-style-position: inside; margin-top: 15px;">
+                    <li>Fresh products sourced directly from farmers</li>
+                    <li>Competitive prices with regular discounts</li>
+                    <li>Fast and reliable delivery service</li>
+                    <li>Easy-to-use online platform</li>
+                    <li>Secure payment options</li>
+                    <li>Excellent customer support</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <h2 class="page-title">Contact Us</h2>
+            <div class="contact-section">
+                <h3>Get in Touch</h3>
+                <p>We love to hear from our customers! Whether you have questions about our products, need assistance with an order, or want to provide feedback, our team is here to help.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address:</strong><br>
+                           Uttara-Diabari, Dhaka-1230
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone:</strong><br>
+                            01727396587
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong><br>
+                            alamin4321ak@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>We Are Open On:</strong><br>
+                            Sunday-Thursday: 8AM - 11PM<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+            <h2 class="page-title">Login to Your Account</h2>
+            <div class="form-container">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                        <div class="error-message" id="login-email-error">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                        <div class="error-message" id="login-password-error">Password must be at least 6 characters</div>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="#" id="register-link">Register here</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Registration Page -->
+        <section id="register" class="page">
+            <h2 class="page-title">Create an Account</h2>
+            <div class="form-container">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">First Name</label>
+                        <input type="text" id="register-name" class="form-control" placeholder="Enter your first name" required>
+                        <div class="error-message" id="register-name-error">Name must be at least 3 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-lastname">Last Name</label>
+                        <input type="text" id="register-lastname" class="form-control" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email Address</label>
+                        <input type="email" id="register-email" class="form-control" placeholder="Enter your email" required>
+                        <div class="error-message" id="register-email-error">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-phone">Phone Number</label>
+                        <input type="tel" id="register-phone" class="form-control" placeholder="Enter your phone number" required>
+                        <div class="error-message" id="register-phone-error">Please enter a valid phone number</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" class="form-control" placeholder="Create a password (must be 6 characters)" required>
+                        <div class="error-message" id="register-password-error">Password must be at least 6 characters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <input type="password" id="register-confirm-password" class="form-control" placeholder="Confirm your password" required>
+                        <div class="error-message" id="register-confirm-password-error">Passwords do not match</div>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="#" id="login-link-2">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Fresh Harvest</h3>
+                    <p>Your trusted online grocery store for fresh and high-quality products delivered to your home.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="products">Products</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Fresh Harvest. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
